@@ -35,3 +35,9 @@ CREATE TABLE invoices (
     payed_at TIMESTAMP,
     medical_history_id INTEGER REFERENCES medical_histories(id)
 );
+
+CREATE TABLE midical_history_treatments (
+    id SERIAL PRIMARY KEY,
+    medical_history_id INTEGER REFERENCES medical_histories(id),
+    treatment_id INTEGER REFERENCES treatments(id)
+);
