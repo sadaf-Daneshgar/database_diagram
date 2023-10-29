@@ -1,4 +1,4 @@
-CREATE DATABASE hospital;
+CREATE DATABASE clinic;
 
 CREATE TABLE patients (
     id SERIAL PRIMARY KEY,
