@@ -27,6 +27,15 @@ CREATE TABLE invoices (
     medical_history_id INTEGER REFERENCES medical_histories(id)
 );
 
+CREATE TABLE invoice_items(
+    id SERIAL PRIMARY KEY,
+    unit_price DECIMAL(10,2),
+    quantity INTEGER,
+    total_price DECIMAL(10,2),
+    invoice_id INTEGER REFERENCES invoices(id),
+    treatment_id INTEGER REFERENCES treatments(id)
+);
+
 /* creat table of invoice_items */
 
 
