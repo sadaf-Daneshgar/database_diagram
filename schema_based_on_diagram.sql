@@ -44,3 +44,21 @@ CREATE TABLE midical_history_treatments (
     medical_history_id INTEGER REFERENCES medical_histories(id),
     treatment_id INTEGER REFERENCES treatments(id)
 );
+
+-- Create an index on the patient_id column in the medical_histories table
+CREATE INDEX idx_patient_id ON medical_histories(patient_id);
+
+-- Create an index on the medical_history_id column in the invoices table
+CREATE INDEX idx_medical_history_id ON invoices(medical_history_id);
+
+-- Create an index on the invoice_id column in the invoice_items table
+CREATE INDEX idx_invoice_id ON invoice_items(invoice_id);
+
+-- Create an index on the treatment_id column in the invoice_items table
+CREATE INDEX idx_treatment_id ON invoice_items(treatment_id);
+
+-- Create an index on the medical_history_id column in the medical_history_treatments table
+CREATE INDEX idx_medical_history_id ON midical_history_treatments(medical_history_id);
+
+-- Create an index on the treatment_id column in the medical_history_treatments table
+CREATE INDEX idx_treatment_id ON midical_history_treatments(treatment_id);
